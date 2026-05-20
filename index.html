@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True Baller Basketball | Official Site</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            background-color: #111;
+            line-height: 1.6;
+        }
+
+        /* Top Logo & Navigation Header - Sticky & Mobile Optimized */
+        .top-header {
+            background-color: #000;
+            padding: 15px 0 5px 0;
+            text-align: center;
+            border-bottom: 3px solid #f57c00;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-logo { height: 100px; width: auto; margin-bottom: 10px; }
+
+        @media (max-width: 768px) {
+            .main-logo { height: 80px; }
+        }
+
+        /* Responsive Navigation Menu */
+        nav { 
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; 
+            padding-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            padding: 5px 8px;
+        }
+        nav a:hover { color: #f57c00; }
+
+        @media (max-width: 480px) {
+            nav { gap: 10px; }
+            nav a { font-size: 0.8rem; }
+        }
+
+        /* Hero Landing Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                        url('https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 65vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .target-heading {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.5rem;
+            color: #f57c00;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.9);
+        }
+
+        @media (max-width: 768px) {
+            .target-heading { font-size: 2.2rem; }
+        }
+
+        .hero p { font-size: 1.4rem; max-width: 800px; margin-top: 10px; font-weight: 300; text-shadow: 2px 2px 4px #000; }
+        @media (max-width: 768px) { .hero p { font-size: 1.1rem; } }
+
+        /* Container Blocks */
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        @media (max-width: 768px) { .container { padding: 40px 15px; } }
+
+        .section-title { 
+            font-family: 'Oswald', sans-serif; 
+            font-size: 2.2rem; 
+            text-transform: uppercase; 
+            border-left: 8px solid #f57c00; 
+            padding-left: 15px; 
+            margin-bottom: 35px; 
+        }
+        @media (max-width: 768px) { .section-title { font-size: 1.7rem; } }
+
+        /* Multi-Column CSS Grids */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; gap: 20px; } }
+
+        .card { 
+            background: #222; 
+            padding: 25px; 
+            border-radius: 8px; 
+            border-bottom: 4px solid #f57c00; 
+            transition: transform 0.3s ease;
+        }
+        .card:hover { transform: translateY(-3px); }
+        .card h3 { font-family: 'Oswald', sans-serif; color: #f57c00; margin-top: 0; font-size: 1.4rem; text-transform: uppercase; }
+        .card p { color: #ccc; font-size: 0.95rem; margin-bottom: 15px; }
+
+        /* Buttons styles */
+        .action-link {
+            display: inline-block;
+            background-color: #f57c00;
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        .action-link:hover { background-color: #e65100; }
+
+        /* Sections Background Mix */
+        .bg-dark-alt { background: #1a1a1a; }
+        
+        /* Bio Content Block */
+        .bio-flex { display: flex; align-items: center; gap: 40px; }
+        .profile-pic { width: 280px; height: auto; border-radius: 8px; border: 3px solid #f57c00; flex-shrink: 0; }
+        @media (max-width: 768px) {
+            .bio-flex { flex-direction: column; text-align: center; gap: 20px; }
+            .profile-pic { width: 220px; }
+        }
+
+        /* Contact Area */
+        .contact-section { background: #000; border-top: 3px solid #f57c00; text-align: center; }
+        .email-link { color: #f57c00; text-decoration: none; font-size: 1.8rem; font-family: 'Oswald', sans-serif; }
+        @media (max-width: 768px) { .email-link { font-size: 1.4rem; } }
+
+        /* Legal Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            overflow-y: auto;
+        }
+        .modal-content {
+            background-color: #222; margin: 10% auto; padding: 30px;
+            border: 1px solid #f57c00; width: 85%; max-width: 700px;
+            color: #ddd; border-radius: 8px;
+        }
+        .close-modal { color: #f57c00; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+        .legal-link { color: #888; text-decoration: none; font-size: 0.8rem; margin: 0 10px; cursor: pointer; }
+        .legal-link:hover { color: #f57c00; }
+
+        footer { background: #000; padding: 30px 0; text-align: center; border-top: 1px solid #222; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <header class="top-header">
+        <img src="logo.jpg" alt="True Baller Training Logo" class="main-logo">
+        <nav>
+            <a href="#about">Team</a>
+            <a href="#youth">Youth Training & Development</a>
+            <a href="#tournaments">Tournaments</a>
+            <a href="#mens-league">Mens League</a>
+            <a href="#merchandise">Merchandise</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 class="target-heading">True Baller Basketball</h1>
+        <p>Building A Better Community.</p>
+    </section>
+
+    <section id="about" class="container">
+        <h2 class="section-title">Founder & Visionary: Nixon Bernard</h2>
+        <div class="bio-flex">
+            <img src="12345678.png" alt="Nixon Bernard" class="profile-pic">
+            <div>
+                <p>Nixon Bernard brings the raw intensity of professional basketball merged with the absolute precision of technical analytical systems directly to the court. As a former <strong>NBA G League prospect</strong>, Nixon understands exactly what is required to master mechanics, execute under pressure, and advance to elite levels of competition.</p>
+                <p>Nixon stands out as a unique "Triple Threat" specialist. He holds a <strong>Bachelors degree in Accounting and Real Estate</strong> paired with a deep technical <strong>background in Engineering</strong>. This allows him to evaluate and develop athletes through a structured, data-driven, systems-based methodology.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="youth" class="bg-dark-alt">
+        <div class="container">
+            <h2 class="section-title">Boys Youth Training & Professional Development</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Community Accessibility</h3>
+                    <p>We develop youth into thriving members of society through targeted athletic programs including basketball, football, and more. Our accessible structure delivers professional training at affordable rates.</p>
+                    <a href="https://trueballerbasketball.github.io/True-baller-training-/" class="action-link" target="_blank">Book Session</a>
+                </div>
+                <div class="card">
+                    <h3>Active Engagement Pods</h3>
+                    <p>No standing around. Our rigorous, systems-based approach separates groups into interactive training modules maximizing personal focus and high-volume skill repetitions.</p>
+                    <a href="https://trueballerbasketball.github.io/True-baller-training-/" class="action-link" target="_blank">Elevate Your Game</a>
+                </div>
+                <div class="card">
+                    <h3>Professional Mentorship</h3>
+                    <p>Beyond court skills, players receive direct, systematic counseling on career strategy, problem-solving, and utilizing professional business networks for long-term placement stability.</p>
+                    <a href="https://trueballerbasketball.github.io/True-baller-training-/" class="action-link" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tournaments" class="container">
+        <h2 class="section-title">Tournaments (Coming Soon)</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Mens 1v1 & 2v2 Showdowns</h3>
+                <p>Test your individual isolation game and pick-and-roll chemistry in high-stakes, bracket-style configurations. Built exclusively for adult players looking to settle the score on the court.</p>
+            </div>
+            <div class="card">
+                <h3>Mens 3v3 Half-Court Circuits</h3>
+                <p>Fast-paced, high-intensity competition following strict half-court execution guidelines. Perfect for rapid ball movement, constant cutting, and elite condition testing under pro structures.</p>
+            </div>
+            <div class="card">
+                <h3>Mens 5v5 Full-Court Tournaments</h3>
+                <p>The premier standard. Complete team tournament fields running full-court operations with official stop-clocks, certified referee crews, and intense tracking metrics across the tri-state area.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="mens-league" class="bg-dark-alt">
+        <div class="container">
+            <h2 class="section-title">Mens League (TBBL Coming Soon)</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Ages 18-45 Welcome</h3>
+                    <p>Built for former athletes, local competitive players, and everyday hoopers looking to stay in shape, compete hard, and enjoy an organized, high-quality basketball community.</p>
+                </div>
+                <div class="card">
+                    <h3>Full Stat Tracking</h3>
+                    <p>Run like a pro franchise. Every league game features full digital statistical analytics, including points, boards, dimes, efficiency charts, and game film review options.</p>
+                </div>
+                <div class="card">
+                    <h3>Our Team & Free Agent Registry</h3>
+                    <p>Register as an intact squad or enter the draft pool as an individual free agent to get picked up by competitive corporate or club teams.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="merchandise" class="container">
+        <h2 class="section-title">Official Merchandise (Coming Soon)</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Shirts & Hoodies</h3>
+                <p>Get True Baller Basketball shirts and hoodies printed with our official logo. Good quality, comfortable gear to wear on or off the court.</p>
+            </div>
+            <div class="card">
+                <h3>Shorts</h3>
+                <p>Comfortable basketball shorts featuring our brand logo. Built for everyday practices, games, or lounging around.</p>
+            </div>
+            <div class="card">
+                <h3>Hats</h3>
+                <p>Standard athletic and lifestyle hats designed to represent the community wherever you go.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section container">
+        <h2 class="section-title" style="border: none; padding: 0; text-align: center;">Connect With True Baller</h2>
+        <p style="margin-bottom: 25px; color: #aaa;">For league entries, group booking validation, or wholesale brand gear accounts:</p>
+        <a href="mailto:trueballerbasketball@gmail.com" class="email-link">trueballerbasketball@gmail.com</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 True Baller Basketball. All Rights Reserved.</p>
+        <p>
+            <span class="legal-link" onclick="openModal('privacyModal')">Privacy Policy</span> | 
+            <span class="legal-link" onclick="openModal('termsModal')">Terms & Conditions</span>
+        </p>
+    </footer>
+
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('privacyModal')">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p><strong>Effective Date: May 2026</strong></p>
+            <p>At True Baller Basketball, we respect your privacy. We securely capture information submitted via JotForm for league check-ins, program bookings, and merch dispatch profiles.</p>
+            <ul>
+                <li><strong>Data Usage:</strong> Strictly limited to roster scheduling, transactional validation, and brand updates.</li>
+                <li><strong>No Commercial Sale:</strong> Data profiles are never distributed or sold to third-party brokers.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('termsModal')">&times;</span>
+            <h2>Terms & Conditions</h2>
+            <p><strong>1. Service Requirements:</strong> Group clinic sessions require a baseline threshold of 5 participants minimum to activate court schedules.</p>
+            <p><strong>2. Liability Notice:</strong> Physical training implies active baseline physical contact. Mandatory signed electronic waivers must clear before participating in any tournament, league, or clinic.</p>
+            <p><strong>3. Brand Assets:</strong> All playbook curriculums, logo identifiers, and training system architectures remain fully proprietary assets.</p>
+        </div>
+    </div>
+
+    <script>
+        // Force browser display engine to settle cleanly back at the absolute coordinates on refresh
+        window.onload = function() {
+            setTimeout(function() {
+                window.scrollTo(0, 0);
+            }, 10);
+        };
+
+        // Modal triggers
+        function openModal(id) { document.getElementById(id).style.display = "block"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+        window.onclick = function(event) { if (event.target.className === 'modal') { event.target.style.display = "none"; } }
+    </script>
+
+</body>
+                  </html>
+                  
